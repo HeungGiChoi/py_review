@@ -34,22 +34,22 @@
 # 
 # }')
 
-# with open('nami.png', 'rb') as file:
-#     header = file.read(10)
-#     print(f'{header}')
+with open('nami.png', 'rb') as file:
+    header = file.read(10)
+    print(f'{header}')
 
-# def identifiy_file(file_path):
-#     with open(file_path, 'rb') as file:
-#         header = file.read(4)
-#         print(header)
-#         if header == b'\x89PNG': #PNG
-#             return "PNG"
-#         elif header[:2] == b'\xff\xd8': #JPEG
-#             return "JPEG"
-#         else:
-#             return "Unknown format"
+def identifiy_file(file_path):
+    with open(file_path, 'rb') as file:
+        header = file.read(4)
+        print(header)
+        if header == b'\x89PNG': #PNG
+            return "PNG"
+        elif header[:2] == b'\xff\xd8': #JPEG
+            return "JPEG"
+        else:
+            return "Unknown format"
     
-# print(identifiy_file('nami.png'))
+print(identifiy_file('nami.png'))
 
 with open('nami.png', 'rb') as source_file:
     data = source_file.read()
